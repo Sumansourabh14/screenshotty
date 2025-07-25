@@ -6,23 +6,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3011;
 const app = express();
 
-// List of sites to screenshot
-const sites = [
-  { name: "linear", url: "https://linear.app" },
-  { name: "notion", url: "https://www.notion.so" },
-  { name: "superlist", url: "https://www.superlist.com" },
-  { name: "raycast", url: "https://raycast.com" },
-  { name: "vercel", url: "https://vercel.com" },
-  { name: "framer", url: "https://www.framer.com" },
-  { name: "pitch", url: "https://pitch.com" },
-  { name: "tldraw", url: "https://www.tldraw.com" },
-  { name: "arc", url: "https://arc.net" },
-  { name: "arcade", url: "https://www.arcade.software" },
-  { name: "marvin", url: "https://heymarvin.com" },
-  { name: "loom", url: "https://www.loom.com" },
-  { name: "retool", url: "https://retool.com" },
-  { name: "zapier", url: "https://zapier.com" },
-];
+const sites = require("./data/sites");
 
 // Ensure screenshots folder exists
 const outputDir = path.join(__dirname, "screenshots");
