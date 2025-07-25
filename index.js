@@ -42,6 +42,14 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
   for (const site of sites) {
     let page;
     try {
+      const filename = `${site.name}.jpg`;
+      const filePath = path.join(outputDir, filename);
+
+      if (fs.existsSync(filePath)) {
+        console.log(`! Screenshot already exists for ${site.url}: ${filePath}`);
+        continue;
+      }
+
       console.log(`📸 Capturing: ${site.url}`);
       page = await browser.newPage();
 
@@ -59,9 +67,6 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
       // Wait for additional time to ensure dynamic content loads
       await new Promise((resolve) => setTimeout(resolve, 5000));
 
-      const filename = `${site.name}.jpg`;
-      const filePath = path.join(outputDir, filename);
-
       await page.screenshot({
         path: filePath,
         fullPage: false,
@@ -74,7 +79,7 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
       console.error(`❌ Failed to capture ${site.url}:`, err.message);
       // Optionally, add retry logic here
     } finally {
-      // Always close the page to free resources
+      // Close the page to free resources
       if (page) await page.close();
       // Add a small delay between captures to avoid overwhelming the browser
       await new Promise((resolve) => setTimeout(resolve, 1000));
