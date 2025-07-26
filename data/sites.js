@@ -37,6 +37,21 @@ const sites = [
   { name: "liveblocks", url: "https://liveblocks.io" }, // Real-time collaboration features for apps[](https://liveblocks.io/)
   { name: "resend", url: "https://resend.com" }, // Transactional email for developers[](https://www.producthunt.com/categories/work-productivity)
   { name: "screenstudio", url: "https://www.screen.studio" }, // Screen recording and video editing for demos[](https://www.producthunt.com/categories/work-productivity)
+  { name: "cred", url: "https://cred.club" },
+  { name: "slash", url: "https://www.joinslash.com" },
+  { name: "fi", url: "https://fi.money" },
+  { name: "slice", url: "https://sliceit.com" },
+  { name: "jupiter", url: "https://jupiter.money" },
+  { name: "onecard", url: "https://www.getonecard.app" },
+  { name: "step", url: "https://www.step.com" },
+  { name: "koho", url: "https://www.koho.ca" },
+  { name: "neon", url: "https://www.neon-free.ch/en/" },
+  { name: "current", url: "https://www.current.com" },
+  { name: "monzo", url: "https://monzo.com" },
+  { name: "revolut", url: "https://www.revolut.com" },
+  { name: "n26", url: "https://n26.com" },
+  { name: "venmo", url: "https://venmo.com" },
+  { name: "Base", url: "https://join.base.app" },
 ];
 
 module.exports = sites;
